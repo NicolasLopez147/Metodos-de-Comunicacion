@@ -15,8 +15,8 @@ int main(){
 
     //Crear un archivo de tipo fifo
     mkfifo(tuberia,0666);
-    
-    for (int potencia = 0 ; potencia < 6;potencia ++){
+    int potencia = 1;
+    // for (int potencia = 0 ; potencia < 6;potencia ++){
         //Se abre la tuberia en modo de escritura
         descriptorTuberia = open(tuberia,O_WRONLY);
 
@@ -39,7 +39,7 @@ int main(){
 
         close(descriptorTuberia);
 
-    }
+    // }
     unlink(tuberia);
     return 0;
 }
