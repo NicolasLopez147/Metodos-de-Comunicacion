@@ -13,5 +13,8 @@ compilaLectura: lectura.c
 crearTerminal: compilaLectura
 	gnome-terminal -- ./lectura
 
+ejecutarLectura: compilaLectura lectura
+	./lectura
+
 clean:
 	rm -r main lectura mainLectura lecturaMain

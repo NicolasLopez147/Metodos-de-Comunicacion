@@ -6,40 +6,44 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#include "datos.h"
+
 int main(){
+    // Ruta del archivo tuberia
+    char *tuberia = "./tuberia";
+    char *tuberia2 = "./tuberia2";
 
-    //Descriptor del archivo
-    int descriptorTuberia;
-    //Ruta del archivo tuberia
-    char *tuberia = "./tuberia"; 
+    // Crear un archivo de tipo fifo
+    int *descriptor;
+    int cantidad = 0;
 
-    //Crear un archivo de tipo fifo
-    mkfifo(tuberia,0666);
-    int potencia = 1;
-    // for (int potencia = 0 ; potencia < 6;potencia ++){
-        //Se abre la tuberia en modo de escritura
-        descriptorTuberia = open(tuberia,O_WRONLY);
+    
+    for (int potencia = 0; potencia < 5 ; potencia ++){
+        for (int i = 0 ; i < 20 ; i ++){
+            mkfifo(tuberia, 0666);
+            int tamano = 1000 * pow(10, potencia) * sizeof(char);
+            
+            char * buffer = malloc(tamano);
 
-        if (descriptorTuberia < 0){
-            perror("Hubo un error abriendo el archivo de la tuberia");
-            exit(-1);
-        }   
-
-        int tamano = 1000*pow(10,potencia)*sizeof(char);
-        //Se aparta memoria de la informacion a enviar
-        char * buffer = malloc(tamano);
-        *(buffer+tamano) = 'a';
-        int r = write(descriptorTuberia,buffer,tamano);
-        if (r < 0){
-            perror("Hubo un error enviando los datos");
-            exit(-1);
+            int r = escribirTuberia(tuberia,buffer,tamano,descriptor);
+            printf("Bytes escritos %d\n",r);
+            
+            cantidad = cantidad+r;
+            while(cantidad < tamano){
+                printf("Antes de escirbir \n");
+                r = escribirTuberia(tuberia,buffer+cantidad,tamano,descriptor);
+                cantidad = r+cantidad;
+            }
+            printf("La cantudad total de bytes escritos es %d\n",cantidad);
+            cantidad = 0;
+            char confirmacion [3];
+            
+            r = leerTuberia(tuberia2,confirmacion,2,descriptor);
+            close(*descriptor);
+            confirmacion[3] = 0;
+            printf("Mensaje de confirmacion %s\n",confirmacion);
+            unlink(tuberia2);
         }
-        printf("Tamano mensaje enviado %d\n",r);
-        // printf("Ultimo elemento enviado %s\n",(buffer+r));
-
-        close(descriptorTuberia);
-
-    // }
-    unlink(tuberia);
-    return 0;
+    }
+    
 }
