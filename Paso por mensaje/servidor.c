@@ -68,7 +68,7 @@ int main(){
             char confirmacion [3];
             r = recv(clientfd,confirmacion,2,0);
             confirmacion[3] = 0;
-            // printf("Confirmacion: %s\n",confirmacion);
+            printf("Confirmacion: %s\n",confirmacion);
             
             close(clientfd);
             close(serverfd);
