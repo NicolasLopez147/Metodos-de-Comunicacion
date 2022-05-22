@@ -10,17 +10,21 @@
 #include <string.h>
 
 #include <math.h>
+#include <time.h>
 
 #define PORT 3536
 #define BACKLOG 5
 int main(){
     int limite = 50;
     for (int potencia = 0 ; potencia < 6 ; potencia ++){
+        double tiempoTotal = 0;
+        int tamanoBuff;
         if (potencia == 5){
             limite = 10;
         }
         for (int i = 0 ; i < limite ; i++){
-            int serverfd, clientfd, r ,opt = 1 ,tamanoBuff;
+            clock_t inicio = clock();
+            int serverfd, clientfd, r ,opt = 1;
             struct sockaddr_in server,client;
             socklen_t tamano = sizeof(client);
 
@@ -58,18 +62,24 @@ int main(){
                 perror("Error en send");
                 exit(-1);
             }
-            printf("Cantidad de bytes enviados %d i %d\n",r,i);
+            // printf("Cantidad de bytes enviados %d i %d\n",r,i);
             char confirmacion [3];
             r = recv(clientfd,confirmacion,2,0);
             confirmacion[3] = 0;
-            printf("Confirmacion: %s\n",confirmacion);
+            // printf("Confirmacion: %s\n",confirmacion);
             
             close(clientfd);
             close(serverfd);
+            clock_t fin = clock();
+            double tiempo = (double)(fin-inicio)/CLOCKS_PER_SEC;
+            tiempoTotal = tiempoTotal+tiempo;
+            // printf("Tiempo empleado: %f i %d\n",tiempo,i);
             int reloj = 0;
             while(reloj < 100000000){
                 reloj++;
             }
         }
+        tiempoTotal = tiempoTotal/limite;
+        printf("El tiempo promedio enviando %d datos y recibiendo una confirmacion es de %f\n",tamanoBuff,tiempoTotal);
     }
 }

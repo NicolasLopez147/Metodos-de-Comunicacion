@@ -10,7 +10,6 @@
 
 #include <math.h>
 
-
 #define PORT 3536
 #define IP "127.0.0.1"
 int main(){
@@ -51,14 +50,12 @@ int main(){
                 perror("Error en recv\n");
                 exit(-1);
             }
-            printf("Cantidad de bytes escritos: %d\n",cantidad);
+            // printf("Cantidad de bytes escritos: %d\n",cantidad);
             r = send(clientefd,"OK",2,0);
             if (r < 0 ){
                 perror("Error en send");
                 exit(-1);
             }
-            char a;
-            // scanf("%s",&a);
             close(clientefd);
             int reloj = 0;
             while(reloj < 100000000){
