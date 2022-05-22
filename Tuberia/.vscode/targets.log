@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun May 22 10:56:45 2022
+# Make data base, printed on Sun May 22 14:01:27 2022
 
 # Variables
 
@@ -49,7 +50,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:58645
+JOURNAL_STREAM = 8:52725
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,7 +72,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1861
+MANAGERPID = 1781
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -85,8 +86,9 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/2124,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/2124
+SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/2044,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/2044
 # environment
+ 
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
@@ -103,7 +105,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 2ba9c4c74dd74db898576338bddb3611
+INVOCATION_ID = 47bdbfa3a1c14ec28eb52361050a8481
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -127,7 +129,7 @@ PWD = /home/nicolas/Sistemas operativos/Proyectos/Parcial1/Tuberia
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2058
+SSH_AGENT_PID = 1978
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -179,7 +181,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-81a44102-1294-4daa-8fe3-0f8964e2349c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9cfe5262-9f27-405b-8b6d-6aa7e7381959.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -217,8 +219,6 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -231,11 +231,11 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/cf1d2c5c_6706_4155_80f1_9aab2bd1fbda
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5e61f174_7191_414e_b796_6dc4177bd6ed
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.85
+GNOME_TERMINAL_SERVICE = :1.561
 # default
 SUFFIXES := 
 # environment
@@ -253,9 +253,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 5744
+VSCODE_PID = 6744
 # variable set hash-table stats:
-# Load=122/1024=12%, Rehash=0, Collisions=15/150=10%
+# Load=121/1024=12%, Rehash=0, Collisions=15/149=10%
 
 # Pattern-specific Variable Values
 
@@ -263,9 +263,9 @@ VSCODE_PID = 5744
 
 # Directories
 
-# . (device 2053, inode 6685078): 10 files, no impossibilities.
+# . (device 2053, inode 6685078): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -358,7 +358,6 @@ compilarMain: main.c
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 7):
 	gcc main.c -o main -lm
- 
 
 # Not a target:
 lectura.c:
@@ -373,6 +372,7 @@ lectura.c:
 #  File has not been updated.
 
 clean:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -400,12 +400,12 @@ main:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 217 B / avg = 9 B
-# current buf: size = 8162 B / used = 217 B / count = 23 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 207 B / avg = 9 B
+# current buf: size = 8162 B / used = 207 B / count = 22 / avg = 9 B
 
-# strcache performance: lookups = 43 / hit rate = 46%
+# strcache performance: lookups = 42 / hit rate = 47%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Sun May 22 10:56:46 2022
+# Load=22/8192=0%, Rehash=0, Collisions=1/42=2%
+# Finished Make data base on Sun May 22 14:01:27 2022
 
  

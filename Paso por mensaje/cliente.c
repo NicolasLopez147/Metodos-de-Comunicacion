@@ -12,6 +12,9 @@
 
 #define PORT 3536
 #define IP "127.0.0.1"
+
+#define KILOB 1000
+
 int main(){
     int limite = 50;
     for (int potencia = 0; potencia < 6 ; potencia ++){
@@ -39,7 +42,7 @@ int main(){
             //     perror("Error en connect\n");
             //     exit(-1);
             // }
-            tamano = 1000 * pow(10, potencia) * sizeof(char);
+            tamano = KILOB * pow(10, potencia) * sizeof(char);
             char * buffer = malloc(tamano);
             int cantidad = 0;
             while (cantidad < tamano){
@@ -51,7 +54,10 @@ int main(){
                 exit(-1);
             }
             // printf("Cantidad de bytes escritos: %d\n",cantidad);
-            r = send(clientefd,"OK",2,0);
+            if (tamano == cantidad)
+                r = send(clientefd,"OK",2,0);
+            else
+                r = send(clientefd,"NO",2,0);
             if (r < 0 ){
                 perror("Error en send");
                 exit(-1);

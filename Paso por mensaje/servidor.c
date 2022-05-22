@@ -14,6 +14,8 @@
 
 #define PORT 3536
 #define BACKLOG 5
+
+#define KILOB 1000
 int main(){
     int limite = 50;
     for (int potencia = 0 ; potencia < 6 ; potencia ++){
@@ -38,7 +40,7 @@ int main(){
             server.sin_addr.s_addr = INADDR_ANY;
             bzero(server.sin_zero,8);
 
-            setsockopt(serverfd,SOL_SOCKET,SO_REUSEADDR,(const char *)&opt,sizeof(int));
+            // setsockopt(serverfd,SOL_SOCKET,SO_REUSEADDR,(const char *)&opt,sizeof(int));
 
             r = bind(serverfd,(struct sockaddr *)&server,sizeof(struct sockaddr));
             if (r < 0 ){
@@ -55,7 +57,7 @@ int main(){
                 perror("Error en el accept");
                 exit(-1);
             }
-            tamanoBuff = 1000 * pow(10, potencia) * sizeof(char);
+            tamanoBuff = KILOB * pow(10, potencia) * sizeof(char);
             char * buffer = malloc(tamanoBuff);
             r = send(clientfd,buffer,tamanoBuff,0);
             if (r < 0 ){

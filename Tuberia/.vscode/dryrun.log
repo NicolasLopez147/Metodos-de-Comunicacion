@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/nicolas/Sistemas operativos/Proyectos/Parcial1/Tuberia'
 gcc main.c -o main -lm
 gcc lectura.c -o lectura -lm

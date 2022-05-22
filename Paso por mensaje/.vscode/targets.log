@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sun May 22 12:22:18 2022
+# Make data base, printed on Sun May 22 14:03:06 2022
 
 # Variables
 
@@ -180,7 +179,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a8d5f31c-ca0f-4bae-a426-40a7b4d8031f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-00d28292-4bd2-4b72-a73d-a1ac8682c6bf.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -218,6 +217,8 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
+NO_AT_BRIDGE = 1
+# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -230,11 +231,11 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/4af95d6a_16d2_46af_9cb2_dfa72d906427
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2108a7d7_8722_4f24_9aaa_03a96ff63d94
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.82
+GNOME_TERMINAL_SERVICE = :1.561
 # default
 SUFFIXES := 
 # environment
@@ -252,9 +253,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 3002
+VSCODE_PID = 6744
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=15/149=10%
+# Load=122/1024=12%, Rehash=0, Collisions=15/150=10%
 
 # Pattern-specific Variable Values
 
@@ -277,6 +278,7 @@ cliente.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 all: ejecutarServidor
 #  Command line target.
@@ -284,7 +286,6 @@ all: ejecutarServidor
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
@@ -364,7 +365,7 @@ compilaServidor: servidor.c
 # Not a target:
 servidor.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 12:22:17.30261775
+#  Last modified 2022-05-22 13:06:40.22078331
 #  File has been updated.
 #  Successfully updated.
 
@@ -375,7 +376,6 @@ clean:
 #  recipe to execute (from 'Makefile', line 20):
 	rm -r servidor cliente
 
- 
 # Not a target:
 cliente:
 #  Implicit rule search has not been done.
@@ -406,6 +406,6 @@ ejecutarServidor: compilaServidor crearTerminal servidor
 # strcache performance: lookups = 41 / hit rate = 53%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Sun May 22 12:22:18 2022
+# Finished Make data base on Sun May 22 14:03:06 2022
 
  

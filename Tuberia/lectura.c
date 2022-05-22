@@ -6,46 +6,34 @@
 #include <math.h>
 #include "datos.h"
 
+#define KILOB 1000
+
 int main()
 {   
     // Ruta del archivo tuberia
     char *tuberia = "./tuberia";
     char *tuberia2 = "./tuberia2";
 
-    char a;
-    int cantidad = 0;
-    int *descriptor;
-    for (int potencia = 0 ; potencia < 5 ; potencia ++){
+    for (int potencia = 0 ; potencia < 6 ; potencia ++){
+        int limite = 100;
 
-        for (int i = 0 ; i < 20 ; i ++){
-            int tamano = 1000 * pow(10, potencia) * sizeof(char);
+        for (int i = 0 ; i < limite ; i ++){
+            int tamano = KILOB * pow(10, potencia) * sizeof(char);
             char * buffer = malloc(tamano);
-            int r = leerTuberia(tuberia,buffer,tamano,descriptor);
-            close(*descriptor);
+            int cantidad = leerTuberia(tuberia,buffer,tamano);
 
-            cantidad = r+cantidad;
-            while(cantidad < tamano){
-                r = leerTuberia(tuberia,buffer+cantidad,tamano,descriptor);
-                close(*descriptor);
-                printf("Valor de r %d\n",r);
-                cantidad = r+cantidad;
-                printf("Cantidad %d\n",cantidad);
-                printf("Tamano %d\n",tamano);
-            }
-
-            printf("Bytes leidos %d\n",cantidad);
-            printf("Tamano de bytes a leer %d\n",tamano);
-            
-            // scanf("%s",&a);
+            printf("Bytes leidos %d i %d\n",cantidad,i);
             unlink(tuberia);
 
-
+            free(buffer);
             mkfifo(tuberia2,0666);
             char confirmacion [] = "OK";
 
-            r = escribirTuberia(tuberia2,confirmacion,2,descriptor);
-            close(*descriptor);
-            cantidad = 0;
+            cantidad = escribirTuberia(tuberia2,confirmacion,2);
+            int reloj = 0;
+            // while(reloj < 100000000){
+            //     reloj++;
+            // }
         }
     }
 }
