@@ -26,6 +26,7 @@ function funMemCompartida(){
     echo "-------------------Memoria compartida------------------"
     cd $memCompartida
     make
+    cd ..
 }
 funTuberia
 funPaso
