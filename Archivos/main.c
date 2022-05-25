@@ -18,11 +18,13 @@ int main() {
     FILE *salida = fopen(archivo1, "w");
     if(salida == NULL) {
         perror("Error al abrir el archivo de salida\n");
+        exit(-1);
     }
 
     FILE *respuesta = fopen(archivo2, "r");
     if(respuesta == NULL) {
         perror("Error al abrir el archivo de respuesta\n");
+        exit(-1);
     }
 
     for(int potencia = 0; potencia < 6; potencia++) {
@@ -43,6 +45,7 @@ int main() {
             r = flock(fileno(salida), LOCK_EX);
             if(r < 0) {
                 perror("Error bloqueando el archivo de salida\n");
+                exit(-1);
             }
 
             fseek(salida, 0, SEEK_SET);
@@ -51,12 +54,14 @@ int main() {
             r = flock(fileno(salida), LOCK_UN);
             if(r < 0) {
                 perror("Error desbloqueando el archivo de salida\n");
+                exit(-1);
             }
 
             // Lectura del archivo de respuesta
             r = flock(fileno(respuesta), LOCK_SH);
             if(r < 0) {
                 perror("Error bloqueando el archivo de respuesta\n");
+                exit(-1);
             }
 
             char confirmacion[tamanoConfirm];
@@ -67,6 +72,7 @@ int main() {
             r = flock(fileno(respuesta), LOCK_UN);
             if(r < 0) {
                 perror("Error desbloqueando el archivo de respuesta\n");
+                exit(-1);
             }
 
             clock_t fin = clock();
