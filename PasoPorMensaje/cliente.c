@@ -54,7 +54,7 @@ int main(){
                 perror("Error en recv\n");
                 exit(-1);
             }
-            printf("Cantidad de bytes escritos: %d\n",cantidad);
+            printf("Bytes leidos %d iteracion %d\n",cantidad,i);
             if (tamano == cantidad)
                 r = send(clientefd,"OK",2,0);
             else

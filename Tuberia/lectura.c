@@ -15,14 +15,14 @@ int main()
     char *tuberia2 = "./tuberia2";
 
     for (int potencia = 0 ; potencia < 6 ; potencia ++){
-        int limite = 100;
+        int limite = 50;
 
         for (int i = 0 ; i < limite ; i ++){
             int tamano = KILOB * pow(10, potencia) * sizeof(char);
             char * buffer = malloc(tamano);
             int cantidad = leerTuberia(tuberia,buffer,tamano);
 
-            printf("Bytes leidos %d i %d\n",cantidad,i);
+            printf("Bytes leidos %d iteracion %d\n",cantidad,i);
             unlink(tuberia);
 
             free(buffer);
@@ -30,10 +30,6 @@ int main()
             char confirmacion [] = "OK";
 
             cantidad = escribirTuberia(tuberia2,confirmacion,2);
-            int reloj = 0;
-            // while(reloj < 100000000){
-            //     reloj++;
-            // }
         }
     }
 }
