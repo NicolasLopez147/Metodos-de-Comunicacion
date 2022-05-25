@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 22 14:03:06 2022
+# Make data base, printed on Wed May 25 15:50:58 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:52725
+JOURNAL_STREAM = 8:63783
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1781
+MANAGERPID = 2290
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -85,7 +85,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/2044,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/2044
+SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/2561,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/2561
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,7 +103,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 47bdbfa3a1c14ec28eb52361050a8481
+INVOCATION_ID = b236a6ebf81941019b0e098f86c2e746
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -127,7 +127,7 @@ PWD = /home/nicolas/Sistemas operativos/Proyectos/Parcial1/Paso por mensaje
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1978
+SSH_AGENT_PID = 2495
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -179,7 +179,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-00d28292-4bd2-4b72-a73d-a1ac8682c6bf.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-58ddb141-4c97-4a78-9ade-8e6acef0152d.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -217,8 +217,6 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -231,11 +229,11 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2108a7d7_8722_4f24_9aaa_03a96ff63d94
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d8aae7f1_26d5_4fc6_bbab_5700a394f066
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.561
+GNOME_TERMINAL_SERVICE = :1.83
 # default
 SUFFIXES := 
 # environment
@@ -253,9 +251,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 6744
+VSCODE_PID = 13371
 # variable set hash-table stats:
-# Load=122/1024=12%, Rehash=0, Collisions=15/150=10%
+# Load=121/1024=12%, Rehash=0, Collisions=15/149=10%
 
 # Pattern-specific Variable Values
 
@@ -263,9 +261,9 @@ VSCODE_PID = 6744
 
 # Directories
 
-# . (device 2053, inode 6684865): 8 files, no impossibilities.
+# . (device 2053, inode 6684865): 6 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,7 +276,6 @@ cliente.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 all: ejecutarServidor
 #  Command line target.
@@ -289,6 +286,7 @@ all: ejecutarServidor
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
+ 
 crearTerminal: compilarCliente
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -365,7 +363,7 @@ compilaServidor: servidor.c
 # Not a target:
 servidor.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 13:06:40.22078331
+#  Last modified 2022-05-22 18:50:32.220551418
 #  File has been updated.
 #  Successfully updated.
 
@@ -403,9 +401,9 @@ ejecutarServidor: compilaServidor crearTerminal servidor
 # strcache buffers: 1 (0) / strings = 19 / storage = 200 B / avg = 10 B
 # current buf: size = 8162 B / used = 200 B / count = 19 / avg = 10 B
 
-# strcache performance: lookups = 41 / hit rate = 53%
+# strcache performance: lookups = 39 / hit rate = 51%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Sun May 22 14:03:06 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Wed May 25 15:50:58 2022
 
  
