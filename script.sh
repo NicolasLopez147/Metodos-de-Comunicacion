@@ -2,7 +2,7 @@
 tuberia="./Tuberia"
 pasoMensaje="./PasoPorMensaje"
 archivos="./Archivos"
-memCompartida="./"
+memCompartida="./MemoriaCompartida"
 # echo Hola Mundo
 function funTuberia(){
     echo "-----------------------Tuberia-------------------------"
