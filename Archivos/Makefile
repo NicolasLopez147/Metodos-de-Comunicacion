@@ -16,4 +16,4 @@ ejecutarLectura: compilarLectura lectura
 	./lectura
 
 clean:
-	rm -r main lectura respuesta.txt salida.txt
+	rm -r main lectura
