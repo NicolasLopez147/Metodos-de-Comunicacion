@@ -25,6 +25,7 @@ int main(){
             limite = 10;
         }
         for (int i = 0 ; i < limite ; i++){
+            int contador = 0;
             clock_t inicio = clock();
             int serverfd, clientfd, r ,opt = 1;
             struct sockaddr_in server,client;
@@ -40,7 +41,7 @@ int main(){
             server.sin_addr.s_addr = INADDR_ANY;
             bzero(server.sin_zero,8);
 
-            // setsockopt(serverfd,SOL_SOCKET,SO_REUSEADDR,(const char *)&opt,sizeof(int));
+            setsockopt(serverfd,SOL_SOCKET,SO_REUSEADDR,(const char *)&opt,sizeof(int));
 
             r = bind(serverfd,(struct sockaddr *)&server,sizeof(struct sockaddr));
             if (r < 0 ){
@@ -59,7 +60,10 @@ int main(){
             }
             tamanoBuff = KILOB * pow(10, potencia) * sizeof(char);
             char * buffer = malloc(tamanoBuff);
-            r = send(clientfd,buffer,tamanoBuff,0);
+            while (contador < tamanoBuff){
+                r = send(clientfd,buffer+contador,tamanoBuff,0);
+                contador = contador+r;
+            }
             if (r < 0 ){
                 perror("Error en send");
                 exit(-1);
@@ -68,7 +72,7 @@ int main(){
             char confirmacion [3];
             r = recv(clientfd,confirmacion,2,0);
             confirmacion[3] = 0;
-            printf("Confirmacion: %s\n",confirmacion);
+            // printf("Confirmacion: %s\n",confirmacion);
             
             close(clientfd);
             close(serverfd);

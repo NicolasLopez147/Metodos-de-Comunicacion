@@ -19,7 +19,7 @@ int main(){
     // Crear un archivo de tipo fifo
     int tamano;
     for (int potencia = 0; potencia < 6 ; potencia ++){
-        int limite = 100;
+        int limite = 50;
         double tiempoTotal = 0;
         for (int i = 0 ; i < limite ; i ++){
             clock_t inicio = clock();
@@ -36,10 +36,7 @@ int main(){
             confirmacion[3] = 0;
             // printf("Mensaje de confirmacion %s\n",confirmacion);
             unlink(tuberia2);
-            int reloj = 0;
-            // while(reloj < 100000000){
-            //     reloj++;
-            // }
+            
             clock_t fin = clock();
             double tiempo = (double)(fin-inicio)/CLOCKS_PER_SEC;
             tiempoTotal = tiempoTotal+tiempo;

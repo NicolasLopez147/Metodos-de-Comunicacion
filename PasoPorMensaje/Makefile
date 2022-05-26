@@ -1,10 +1,10 @@
-all : ejecutarServidor
+all : imprimir ejecutarServidor
 
 ejecutarCliente: compilarCliente cliente
 	./cliente
 
 compilarCliente: cliente.c
-	gcc cliente.c -o cliente -lm
+	gcc cliente.c -o cliente -lm 
 
 
 compilaServidor: servidor.c
@@ -15,6 +15,7 @@ crearTerminal: compilarCliente
 
 ejecutarServidor: compilaServidor crearTerminal servidor
 	./servidor
-
+imprimir:
+	
 clean:
 	rm -r servidor cliente
