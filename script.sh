@@ -1,9 +1,11 @@
 #!/bin/bash
+# Carpetas de los programas
 tuberia="./Tuberia"
 pasoMensaje="./PasoPorMensaje"
 archivos="./Archivos"
 memCompartida="./"
-# echo Hola Mundo
+# Cada funcion imprime el nombre del metodo de comunicacion, va a la ruta,
+# ejecuta el make y vuelve a la carpeta original
 function funTuberia(){
     echo "-----------------------Tuberia-------------------------"
     cd $tuberia
@@ -32,4 +34,5 @@ funTuberia
 funPaso
 funArchivos
 funMemCompartida
+# Permite utilizar correr todos los comandos en la terminal de origen 
 exec bash
