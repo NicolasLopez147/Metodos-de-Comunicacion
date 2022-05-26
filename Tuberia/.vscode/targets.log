@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sun May 22 14:01:27 2022
+# Make data base, printed on Wed May 25 20:45:49 2022
 
 # Variables
 
@@ -50,7 +49,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"es-419","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:52725
+JOURNAL_STREAM = 8:54367
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -72,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1781
+MANAGERPID = 1591
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -86,9 +85,8 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/2044,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/2044
+SESSION_MANAGER = local/nicolas-Nitro-AN515-44:@/tmp/.ICE-unix/1852,unix/nicolas-Nitro-AN515-44:/tmp/.ICE-unix/1852
 # environment
- 
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
@@ -105,7 +103,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 47bdbfa3a1c14ec28eb52361050a8481
+INVOCATION_ID = 58489f1d3a4949cc9b58be6e5f1bf8a5
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -129,7 +127,7 @@ PWD = /home/nicolas/Sistemas operativos/Proyectos/Parcial1/Tuberia
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1978
+SSH_AGENT_PID = 1786
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -181,7 +179,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9cfe5262-9f27-405b-8b6d-6aa7e7381959.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7ce7247c-35a4-43a6-9d82-42d36ad2b323.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -197,7 +195,7 @@ XDG_CURRENT_DESKTOP = Unity
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/nicolas/Sistemas operativos/Proyectos/Parcial1
+OLDPWD = /home/nicolas/Sistemas operativos/Proyectos/Parcial1/Tuberia
 # default
 .VARIABLES := 
 # automatic
@@ -219,6 +217,8 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
+NO_AT_BRIDGE = 1
+# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -231,11 +231,11 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5e61f174_7191_414e_b796_6dc4177bd6ed
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/57bd5065_fbe5_487f_85ce_81aa4b67ff6c
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.561
+GNOME_TERMINAL_SERVICE = :1.83
 # default
 SUFFIXES := 
 # environment
@@ -253,9 +253,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 6744
+VSCODE_PID = 2815
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=15/149=10%
+# Load=122/1024=12%, Rehash=0, Collisions=15/150=10%
 
 # Pattern-specific Variable Values
 
@@ -263,9 +263,9 @@ VSCODE_PID = 6744
 
 # Directories
 
-# . (device 2053, inode 6685078): 9 files, no impossibilities.
+# . (device 2053, inode 6685078): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,7 +298,8 @@ crearTerminal: compilaLectura
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-21 18:00:29.802420468
+ 
+#  Last modified 2022-05-25 20:12:57.365033124
 #  File has been updated.
 #  Successfully updated.
 
@@ -372,7 +373,6 @@ lectura.c:
 #  File has not been updated.
 
 clean:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -400,12 +400,12 @@ main:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 207 B / avg = 9 B
-# current buf: size = 8162 B / used = 207 B / count = 22 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 202 B / avg = 9 B
+# current buf: size = 8162 B / used = 202 B / count = 21 / avg = 9 B
 
-# strcache performance: lookups = 42 / hit rate = 47%
+# strcache performance: lookups = 43 / hit rate = 51%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=1/42=2%
-# Finished Make data base on Sun May 22 14:01:27 2022
+# Load=21/8192=0%, Rehash=0, Collisions=1/43=2%
+# Finished Make data base on Wed May 25 20:45:49 2022
 
  

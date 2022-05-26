@@ -1,7 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/nicolas/Sistemas operativos/Proyectos/Parcial1/PasoPorMensaje'
 gcc servidor.c -o servidor -lm
-gcc cliente.c -o cliente -lm
+gcc cliente.c -o cliente -lm 
 gnome-terminal -- ./cliente
 cc     servidor.c   -o servidor
 ./servidor
